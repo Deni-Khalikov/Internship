@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Routine App</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="content">
+
+        <div class="menublock">
+            <button class="accordion">Morning Routine</button>
+            <div class="panel">
+                <ul id="todoListMorning"></ul>
+                <form id="todoFormMorning">
+                    <label> Add your todo here 
+                    <input type="text" id="todoInput"> 
+                    </label>
+                    <button type="button" onclick="todoList()">Add Item</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="menublock">
+            <button class="accordion">Midday Routine</button>
+            <div class="panel">
+                <ul id="todoListMidday"></ul>
+                <form id="todoFormMidday">
+                    <label> Add your todo here 
+                    <input type="text" id="todoInput"> 
+                    </label>
+                    <button type="button" onclick="todoList()">Add Item</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="menublock">
+            <button class="accordion">Night Routine</button>
+            <div class="panel">
+                <ul id="todoListNight"></ul>
+                <form id="todoFormNight">
+                    <label> Add your todo here 
+                    <input type="text" id="todoInput"> 
+                    </label>
+                    <button type="button" onclick="todoList()">Add Item</button>
+                </form>
+                <script src="script.js"></script>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
