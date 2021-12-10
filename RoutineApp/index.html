@@ -14,40 +14,40 @@
     <div class="content">
 
         <div class="menublock">
-            <button class="accordion">Morning Routine</button>
-            <div class="panel">
+            <button class="accordion"><h1>Morning</h1></button>
+            <div class="panel" style="display:block;">
                 <ul id="todoListMorning"></ul>
                 <form id="todoFormMorning">
-                    <label> Add your todo here 
-                    <input type="text" id="todoInput"> 
+                    <label>Add your todo here 
+                    <input type="text" id="todoInputMorning"> 
                     </label>
-                    <button type="button" onclick="todoList()">Add Item</button>
+                    <button type="button" onclick="addItem('morning')">Add Item</button>
                 </form>
             </div>
         </div>
 
         <div class="menublock">
-            <button class="accordion">Midday Routine</button>
-            <div class="panel">
+            <button class="accordion"><h1>Midday</h1></button>
+            <div class="panel" style="display:block;">
                 <ul id="todoListMidday"></ul>
                 <form id="todoFormMidday">
                     <label> Add your todo here 
-                    <input type="text" id="todoInput"> 
+                    <input type="text" id="todoInputMidday"> 
                     </label>
-                    <button type="button" onclick="todoList()">Add Item</button>
+                    <button type="button" onclick="addItem('midday')">Add Item</button>
                 </form>
             </div>
         </div>
 
         <div class="menublock">
-            <button class="accordion">Night Routine</button>
-            <div class="panel">
+            <button class="accordion"><h1>Night</h1></button>
+            <div class="panel" style="display:block;">
                 <ul id="todoListNight"></ul>
                 <form id="todoFormNight">
                     <label> Add your todo here 
-                    <input type="text" id="todoInput"> 
+                    <input type="text" id="todoInputNight"> 
                     </label>
-                    <button type="button" onclick="todoList()">Add Item</button>
+                    <button type="button" onclick="addItem('night')">Add Item</button>
                 </form>
                 <script src="script.js"></script>
             </div>
