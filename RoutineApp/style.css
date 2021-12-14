@@ -1,40 +1,109 @@
-/* Style the buttons that are used to open and close the accordion panel */
-.accordion {
-    background-color: #eee;
-    color: #444;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    text-align: left;
-    border: none;
-    outline: none;
-    transition: 0.4s;
+let acc = document.getElementsByClassName("accordion");
+let i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    let panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+
+let morningArr = [];
+let middayArr = [];
+let nightArr = [];
+
+function addItem(routineType) {
+  if (routineType === 'morning') {
+    // STEP 1: identify, or get reference to the input element
+    let item = document.getElementById('todoInputMorning');
+
+    // STEP 2: ensure entered value is not null/empty
+    if (item.value !== '') {
+      // STEP 3: push valid values into corresponding array
+      morningArr.push(item.value);
+    }
+    // STEP 4: empty out the input box
+    item.value = '';
+    
   }
+
+  // adding items to Morning
+  let morningParentList = document.getElementById('todoListMorning');
+  morningParentList.innerHTML = '';
+
+  morningArr.forEach(element => {
+    let deleteButton = document.createElement('button')
+
+    let editButton = document.createElement('button')
+
+    deleteButton.innerHTML = 'x'
+
+    editButton.innerHTML = 'e'
+
+    deleteButton.classList.add('google-sucks')
+
+    editButton.classList.add('airbnb-sucks')
+
+
+
+    deleteButton.addEventListener('click', function() {
+      deleteItemMorning(element);
+    })
+
+    editButton.addEventListener('click', function() {
+      editButtonMorning(element)
+    })
+
+    let text    = document.createTextNode(element)
+    let newItem = document.createElement('li')
+    newItem.appendChild(text)
+
+    newItem.appendChild(editButton)
+    newItem.appendChild(deleteButton)
+    morningParentList.appendChild(newItem)
+  });
+}
+
+function editButtonMorning(element){
+  console.log('edit function: ', element)
+}
+
+
+// function to delete morning
+function deleteItemMorning(element) {
+
+  console.log('inside function: ', element)
+  for (let i = 0; i < morningArr.length; i++) {
+    if (morningArr[i] === element) {
+      morningArr.splice(i, 1);
+    }
+  }
+
   
-  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-  .active, .accordion:hover {
-    background-color: lightblue;
-  }
-  
-  /* Style the accordion panel. Note: hidden by default */
-  .panel {
-    padding: 0 18px;
-    background-color: white;
-    display: none;
-    overflow: hidden;
-  }
 
-  .content{
-      margin: auto;
-      width: 60%;
-      border: 5px ;
-      padding: 10px;
-  }
+  // add items to Morning
+  let morningParentList = document.getElementById('todoListMorning');
+  morningParentList.innerHTML = '';
 
-  .panel{
-      background-color: rgb(230, 173, 219);
-  }
+  morningArr.forEach(element => {
+    let deleteItem = document.createElement('button')
+    deleteItem.innerHTML = 'x'
+    deleteItem.classList.add('google-sucks')
+    deleteItem.addEventListener('click', function() {
+    deleteItemMorning(element);
+    })
+    let text    = document.createTextNode(element)
+    let newItem = document.createElement('li')
+    newItem.appendChild(text)
 
-.menublock{
-    margin-bottom: 10px;
+    newItem.appendChild(deleteItem)
+    morningParentList.appendChild(newItem)
+  });
+
+
 }
